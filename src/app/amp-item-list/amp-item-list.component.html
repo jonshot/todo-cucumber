@@ -1,0 +1,6 @@
+<ul *ngIf="todos && todos.length">
+  <li *ngFor="let todo of todos; let i = index"><label><input type="checkbox" [(ngModel)]="todo.done" (ngModelChange)="done()">{{todo.name}}</label><button (click)="removeItem(i)">X</button></li>
+</ul>
+<ul *ngIf="!todos || todos.length === 0">
+  <li>No todo items</li>
+</ul>
